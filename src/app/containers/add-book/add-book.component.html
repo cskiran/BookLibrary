@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="full-margin">
+  <form #f="ngForm" (ngSubmit)="addNewBook(f)">
+    <p>
+      <label>Image url:</label>
+      <input type="text" name="image_url" required ngModel>
+    </p>
+    <p>
+      <label>Title:</label>
+      <input type="title" name="title" required ngModel>
+    </p>
+    <p>
+      <label>Author:</label>
+      <input type="author" name="author" required ngModel>
+    </p>
+    <p>
+      <label>Category id:</label>
+      <input type="number" name="category_id" required ngModel>
+    </p>
+    <p>
+      <label>Category:</label>
+      <input type="category" name="category" required ngModel>
+    </p>
+    <button type="submit" [disabled]="!f.valid">Login</button>
+  </form>
+</div>

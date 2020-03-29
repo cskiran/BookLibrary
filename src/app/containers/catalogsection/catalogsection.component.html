@@ -1,0 +1,17 @@
+<app-header [categoryData$]="categoryData$" (selectedCategory)="sortCat($event)"></app-header>
+<ng-container *ngIf="(catalogData$ | async) as data">
+  <div class="display-flex">
+    <div class="catalog-card flex-6 card-width" *ngFor="let record of data.records">
+      <div class="display-flex flex-direction__column flex-align card-width">
+        <img src="{{record.fields.image_url}}" height="250" width="250" />
+        <div class="text--align">
+          {{record.fields.title}}
+        </div>
+        <span class="text--align">{{record.fields.author}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="text--align" *ngIf="data.offset"><a class="button-style" (click)="showMore(data.offset)">Show More
+      Books</a>
+  </div>
+</ng-container>

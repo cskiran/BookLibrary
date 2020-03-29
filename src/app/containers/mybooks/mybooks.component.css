@@ -1,0 +1,58 @@
+* * {
+  box-sizing: border-box;
+}
+
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-direction__column {
+  flex-direction: column;
+}
+
+.flex-align {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-6 {
+  flex: 1 1 0;
+  margin: 0.25rem;
+}
+
+.catalog-card {
+  border: 2px solid black;
+}
+
+.card-width {
+  width: 18.29rem;
+  max-width: 17rem;
+}
+
+.text--align {
+  text-align: center;
+}
+
+.button-style {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+.button-style:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}

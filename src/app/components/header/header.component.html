@@ -1,0 +1,38 @@
+<header>
+  <div class="header-left dropdown btn-padding" *ngIf="(categoryData$ | async) as data">
+    <span>{{currentCat}}</span>
+    <div class="dropdown-content">
+      <div *ngFor="let record of data.records">
+        <div class="category-box"><a
+            (click)="selectCat(record.fields.category,record.fields.id)">{{record.fields.category}}</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="header-center">
+    World Of Books
+  </div>
+  <ng-container *ngIf="!username; else loggedIn">
+    <div class="header-right dropdown btn-padding">
+
+      <span>SignIn</span>
+      <div class="dropdown-content">
+        <form #f="ngForm" (ngSubmit)="login(f)">
+          <p>
+            <label>UserName:</label>
+            <input type="text" name="username" required ngModel>
+          </p>
+          <p>
+            <label>Password:</label>
+            <input type="password" name="password" required ngModel>
+          </p>
+          <button type="submit" [disabled]="!f.valid">Login</button>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loggedIn>
+    <button *ngIf="!addBook" class="btn-color header-right dropdown btn-padding" (click)="myBooks()">{{username}}'s
+      Books</button>
+    <button *ngIf="addBook" class="header-right dropdown btn-padding" (click)="addaBook()">Add Books</button>
+  </ng-template>
+</header>
